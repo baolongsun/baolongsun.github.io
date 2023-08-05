@@ -16,22 +16,22 @@
   <meta name="author" content="Baolong Sun">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1. 迭代1.1 for循环迭代通过下列代码可以便利一个数组并且将数值增加到一个list变量中 123list &#x3D; []for i in range(10):	list.append(i)  1.2 列表迭代式12list &#x3D; [i for i in range(10)]list2 &#x3D; [i for i in range(100) if i%2&#x3D;&#x3D;0]  1.3 index与元素同时迭代1234l">
+    <meta name="description" content="1. torch1.1 二维卷积1234567import torchimport torch.nn as nnq &#x3D; nn.Conv2d(3,1,(4,4))#in_channel,out_channel,kernel_sizeprint(list(q.named_parameters())[0][1].shape)#卷积核的维度(1,3,4,4)print(list(q.named_param">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数组操作">
-<meta property="og:url" content="https://baolongsun.github.io/2023/08/04/%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C/index.html">
+<meta property="og:title" content="CNN,Einops">
+<meta property="og:url" content="https://baolongsun.github.io/2023/08/05/CNN,Einops/index.html">
 <meta property="og:site_name" content="Baolong">
-<meta property="og:description" content="1. 迭代1.1 for循环迭代通过下列代码可以便利一个数组并且将数值增加到一个list变量中 123list &#x3D; []for i in range(10):	list.append(i)  1.2 列表迭代式12list &#x3D; [i for i in range(10)]list2 &#x3D; [i for i in range(100) if i%2&#x3D;&#x3D;0]  1.3 index与元素同时迭代1234l">
+<meta property="og:description" content="1. torch1.1 二维卷积1234567import torchimport torch.nn as nnq &#x3D; nn.Conv2d(3,1,(4,4))#in_channel,out_channel,kernel_sizeprint(list(q.named_parameters())[0][1].shape)#卷积核的维度(1,3,4,4)print(list(q.named_param">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-08-04T12:46:00.000Z">
-<meta property="article:modified_time" content="2023-08-04T12:45:03.201Z">
+<meta property="article:published_time" content="2023-08-05T12:22:00.000Z">
+<meta property="article:modified_time" content="2023-08-05T12:33:20.425Z">
 <meta property="article:author" content="Baolong Sun">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>数组操作 - Baolong</title>
+  <title>CNN,Einops - Baolong</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="数组操作"></span>
+            <span id="subtitle" data-typed-text="CNN,Einops"></span>
           
         </div>
 
@@ -208,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-08-04 20:46" pubdate>
-          2023年8月4日 晚上
+        <time datetime="2023-08-05 20:22" pubdate>
+          2023年8月5日 晚上
         </time>
       </span>
     
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k 字
+          689 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          11 分钟
+          6 分钟
         
       </span>
     
@@ -268,32 +268,16 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">数组操作</h1>
+            <h1 id="seo-header">CNN,Einops</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="1-迭代"><a href="#1-迭代" class="headerlink" title="1. 迭代"></a>1. 迭代</h2><h4 id="1-1-for循环迭代"><a href="#1-1-for循环迭代" class="headerlink" title="1.1 for循环迭代"></a>1.1 for循环迭代</h4><p>通过下列代码可以便利一个数组并且将数值增加到一个list变量中</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">list</span> = []<br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>):<br>	<span class="hljs-built_in">list</span>.append(i)<br></code></pre></td></tr></table></figure>
+                <h2 id="1-torch"><a href="#1-torch" class="headerlink" title="1. torch"></a>1. torch</h2><h4 id="1-1-二维卷积"><a href="#1-1-二维卷积" class="headerlink" title="1.1 二维卷积"></a>1.1 二维卷积</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> torch<br><span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn<br>q = nn.Conv2d(<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,(<span class="hljs-number">4</span>,<span class="hljs-number">4</span>))<span class="hljs-comment">#in_channel,out_channel,kernel_size</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>(q.named_parameters())[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>].shape)<span class="hljs-comment">#卷积核的维度(1,3,4,4)</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>(q.named_parameters())[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>].shape)<span class="hljs-comment">#偏置项的维度(1)</span><br>data  = torch.randn(<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">64</span>,<span class="hljs-number">64</span>)<span class="hljs-comment">#batch,channel,height,weight</span><br><span class="hljs-built_in">print</span>(q(a).shape)<span class="hljs-comment">#(1,1,61,61)</span><br></code></pre></td></tr></table></figure>
 
-<h4 id="1-2-列表迭代式"><a href="#1-2-列表迭代式" class="headerlink" title="1.2 列表迭代式"></a>1.2 列表迭代式</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">list</span> = [i <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>)]<br>list2 = [i <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">100</span>) <span class="hljs-keyword">if</span> i%<span class="hljs-number">2</span>==<span class="hljs-number">0</span>]<br></code></pre></td></tr></table></figure>
 
-<h4 id="1-3-index与元素同时迭代"><a href="#1-3-index与元素同时迭代" class="headerlink" title="1.3 index与元素同时迭代"></a>1.3 index与元素同时迭代</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">list</span> = [i**<span class="hljs-number">2</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">100</span>)]<br><span class="hljs-built_in">map</span> = &#123;&#125;<br><span class="hljs-keyword">for</span> index,data <span class="hljs-keyword">in</span> <span class="hljs-built_in">list</span>:<br>	<span class="hljs-built_in">map</span>[data] = index<br></code></pre></td></tr></table></figure>
 
-<h4 id="1-4-zip迭代式"><a href="#1-4-zip迭代式" class="headerlink" title="1.4 zip迭代式"></a>1.4 zip迭代式</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> i,j <span class="hljs-keyword">in</span> <span class="hljs-built_in">zip</span>(<span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>),<span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>)):<br>	<span class="hljs-built_in">print</span>(i,j)<br></code></pre></td></tr></table></figure>
-
-<h4 id="1-5-product迭代式"><a href="#1-5-product迭代式" class="headerlink" title="1.5 product迭代式"></a>1.5 product迭代式</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> itertools <span class="hljs-keyword">import</span> product<br><span class="hljs-keyword">for</span> i,j <span class="hljs-keyword">in</span> product(<span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>),<span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>)):<br>	<span class="hljs-built_in">print</span>(i,j)<br></code></pre></td></tr></table></figure>
-
-<h2 id="2-切片"><a href="#2-切片" class="headerlink" title="2. 切片"></a>2. 切片</h2><h4 id="2-1-一维切片"><a href="#2-1-一维切片" class="headerlink" title="2.1 一维切片"></a>2.1 一维切片</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">list</span> = [i <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">100</span>)]<br>a = <span class="hljs-built_in">list</span>[:<span class="hljs-number">10</span>]<span class="hljs-comment">#前10个元素</span><br>b = <span class="hljs-built_in">list</span>[<span class="hljs-number">10</span>:]<span class="hljs-comment">#从第10个元素开始</span><br>c = <span class="hljs-built_in">list</span>[-<span class="hljs-number">10</span>:]<span class="hljs-comment">#最后10个元素</span><br>d = <span class="hljs-built_in">list</span>[-<span class="hljs-number">1</span>]<span class="hljs-comment">#取最后一个元素,此时结果为一个元素</span><br>e = <span class="hljs-built_in">list</span>[-<span class="hljs-number">2</span>:-<span class="hljs-number">1</span>]<span class="hljs-comment">#此时仍然取最后一个元素,但此时结果为一个数组,注意与d的区别</span><br>f = <span class="hljs-built_in">list</span>[<span class="hljs-number">0</span>:-<span class="hljs-number">1</span>:<span class="hljs-number">2</span>]<span class="hljs-comment">#起点:终点:步长</span><br>g = <span class="hljs-built_in">list</span>[::<span class="hljs-number">2</span>]<span class="hljs-comment">#以2为步长取元素,抽点操作</span><br>h = <span class="hljs-built_in">list</span>[::-<span class="hljs-number">1</span>]<span class="hljs-comment">#将原数组逆序排列</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="2-2-多维切片"><a href="#2-2-多维切片" class="headerlink" title="2.2 多维切片"></a>2.2 多维切片</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br>a = np.random.randn(<span class="hljs-number">10</span>,<span class="hljs-number">10</span>)<span class="hljs-comment">#10行10列的二维矩阵</span><br>b = a[<span class="hljs-number">2</span>:<span class="hljs-number">3</span>,<span class="hljs-number">5</span>:<span class="hljs-number">6</span>]<span class="hljs-comment">#取a的2行,5列,此时仍为二维矩阵</span><br>c = a[<span class="hljs-number">2</span>,<span class="hljs-number">5</span>:<span class="hljs-number">6</span>]<span class="hljs-comment">#取a的2行,5列,此时仍为一维矩阵</span><br>d = a[<span class="hljs-number">2</span>,<span class="hljs-number">5</span>]<span class="hljs-comment">#取a的2行,5列,此时仍为一个元素</span><br>e = a[:<span class="hljs-number">5</span>,-<span class="hljs-number">5</span>:]<span class="hljs-comment">#取前5行,后5列,此时为二维矩阵</span><br></code></pre></td></tr></table></figure>
-
-<h2 id="3-numpy的生成式"><a href="#3-numpy的生成式" class="headerlink" title="3. numpy的生成式"></a>3. numpy的生成式</h2><h4 id="3-1-初始化数组"><a href="#3-1-初始化数组" class="headerlink" title="3.1 初始化数组"></a>3.1 初始化数组</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br>a = np.random.randn(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>)<span class="hljs-comment">#*参数传入方式,可以随意输入int数字,输出标准正太分布的多维矩阵</span><br>b = np.random.randint(<span class="hljs-number">0</span>,<span class="hljs-number">10</span>,(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>))<span class="hljs-comment">#开始,结束,矩阵维度的随机整数</span><br>c = np.arange(<span class="hljs-number">0</span>,<span class="hljs-number">10</span>,<span class="hljs-number">0.01</span>)<span class="hljs-comment">#开始,结束,步长</span><br>d = np.linspace(<span class="hljs-number">0</span>,<span class="hljs-number">10</span>,<span class="hljs-number">100</span>)<span class="hljs-comment">#开始,结束,点数</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="3-2-numpy矩阵乘法"><a href="#3-2-numpy矩阵乘法" class="headerlink" title="3.2 numpy矩阵乘法"></a>3.2 numpy矩阵乘法</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">a = np.random.randn(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)<br>b = np.arange(<span class="hljs-number">6</span>).reshape(<span class="hljs-number">3</span>,-<span class="hljs-number">1</span>)<span class="hljs-comment">#维度变换</span><br>c = a@b<span class="hljs-comment">#矩阵乘法</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="3-3-numpy数组操作"><a href="#3-3-numpy数组操作" class="headerlink" title="3.3 numpy数组操作"></a>3.3 numpy数组操作</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">a = np.linspace(<span class="hljs-number">0</span>,<span class="hljs-number">10</span>,<span class="hljs-number">100</span>)<br><span class="hljs-built_in">print</span>(a.shape)<span class="hljs-comment">#查看a的维度</span><br>b = a.reshape(<span class="hljs-number">1</span>,<span class="hljs-number">10</span>,-<span class="hljs-number">1</span>)<span class="hljs-comment">#-1让numpy自动推断剩余的维度,需要保证整除</span><br>c = a.transpose(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">0</span>)<span class="hljs-comment">#将多维矩阵的维度进行调换</span><br>d = c.flatten()<span class="hljs-comment">#将矩阵展平为1维度</span><br>e = d.tolist()<span class="hljs-comment">#将numpy转为多维list,便于序列化</span><br></code></pre></td></tr></table></figure>
-
+<h2 id="2-einops"><a href="#2-einops" class="headerlink" title="2.einops"></a>2.einops</h2><h4 id="2-1rearrange"><a href="#2-1rearrange" class="headerlink" title="2.1rearrange"></a>2.1rearrange</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> torch<br><span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn<br><span class="hljs-keyword">from</span> einops <span class="hljs-keyword">import</span> rearrange, repeat,reduce<br>img = torch.randn(<span class="hljs-number">300</span>,<span class="hljs-number">300</span>,<span class="hljs-number">3</span>)<br>img2 = rearrange(img,<span class="hljs-string">&quot;c h w -&gt; 1 c h w&quot;</span>)<span class="hljs-comment">#(1,300,300,3)</span><br>img3 = rearrange(img2,<span class="hljs-string">&quot;b c (h h1) (w w1) -&gt; b (h w) (h1 w1 c)&quot;</span>,h1=<span class="hljs-number">100</span>,w1=<span class="hljs-number">100</span>)<span class="hljs-comment">#生成3*3的flatten列向量(1,9,30000)</span><br>img4 = rearrange(img2,<span class="hljs-string">&quot;b c (h h1) (w wq) -&gt; b (h w) h1 w1 c&quot;</span>,h1=<span class="hljs-number">100</span>,w1=<span class="hljs-number">100</span>)<span class="hljs-comment">#生成3*3的裁剪图(1,9,100,100,3)</span><br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -318,8 +302,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>数组操作</div>
-      <div>https://baolongsun.github.io/2023/08/04/数组操作/</div>
+      <div>CNN,Einops</div>
+      <div>https://baolongsun.github.io/2023/08/05/CNN,Einops/</div>
     </div>
     <div class="license-meta">
       
@@ -331,7 +315,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年8月4日</div>
+          <div>2023年8月5日</div>
         </div>
       
       
@@ -363,18 +347,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/08/05/CNN,Einops/" title="CNN,Einops">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">CNN,Einops</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/08/02/hello-world/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/2023/08/04/%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C/" title="数组操作">
+                        <span class="hidden-mobile">数组操作</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

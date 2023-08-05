@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>CNN,Einops</title>
+    <link href="/2023/08/05/CNN,Einops/"/>
+    <url>/2023/08/05/CNN,Einops/</url>
+    
+    <content type="html"><![CDATA[<h2 id="1-torch"><a href="#1-torch" class="headerlink" title="1. torch"></a>1. torch</h2><h4 id="1-1-二维卷积"><a href="#1-1-二维卷积" class="headerlink" title="1.1 二维卷积"></a>1.1 二维卷积</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> torch<br><span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn<br>q = nn.Conv2d(<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,(<span class="hljs-number">4</span>,<span class="hljs-number">4</span>))<span class="hljs-comment">#in_channel,out_channel,kernel_size</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>(q.named_parameters())[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>].shape)<span class="hljs-comment">#卷积核的维度(1,3,4,4)</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>(q.named_parameters())[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>].shape)<span class="hljs-comment">#偏置项的维度(1)</span><br>data  = torch.randn(<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">64</span>,<span class="hljs-number">64</span>)<span class="hljs-comment">#batch,channel,height,weight</span><br><span class="hljs-built_in">print</span>(q(a).shape)<span class="hljs-comment">#(1,1,61,61)</span><br></code></pre></td></tr></table></figure><h2 id="2-einops"><a href="#2-einops" class="headerlink" title="2.einops"></a>2.einops</h2><h4 id="2-1rearrange"><a href="#2-1rearrange" class="headerlink" title="2.1rearrange"></a>2.1rearrange</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> torch<br><span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn<br><span class="hljs-keyword">from</span> einops <span class="hljs-keyword">import</span> rearrange, repeat,reduce<br>img = torch.randn(<span class="hljs-number">300</span>,<span class="hljs-number">300</span>,<span class="hljs-number">3</span>)<br>img2 = rearrange(img,<span class="hljs-string">&quot;c h w -&gt; 1 c h w&quot;</span>)<span class="hljs-comment">#(1,300,300,3)</span><br>img3 = rearrange(img2,<span class="hljs-string">&quot;b c (h h1) (w w1) -&gt; b (h w) (h1 w1 c)&quot;</span>,h1=<span class="hljs-number">100</span>,w1=<span class="hljs-number">100</span>)<span class="hljs-comment">#生成3*3的flatten列向量(1,9,30000)</span><br>img4 = rearrange(img2,<span class="hljs-string">&quot;b c (h h1) (w wq) -&gt; b (h w) h1 w1 c&quot;</span>,h1=<span class="hljs-number">100</span>,w1=<span class="hljs-number">100</span>)<span class="hljs-comment">#生成3*3的裁剪图(1,9,100,100,3)</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>python</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>数组操作</title>
     <link href="/2023/08/04/%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C/"/>
     <url>/2023/08/04/%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C/</url>
