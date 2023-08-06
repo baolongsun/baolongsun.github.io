@@ -16,22 +16,26 @@
   <meta name="author" content="Baolong Sun">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1. torch1.1 二维卷积1234567import torchimport torch.nn as nnq &#x3D; nn.Conv2d(3,1,(4,4))#in_channel,out_channel,kernel_sizeprint(list(q.named_parameters())[0][1].shape)#卷积核的维度(1,3,4,4)print(list(q.named_param">
+    <meta name="description" content="1.视觉信息流我主要研究的方向是类脑视觉,下图左半部分是我们人类的视觉处理过程中的从视网膜(retina)到脑区的信息流图,右半部分是我们具体的人脑的图形界面.  值得注意的是上图中左半部分V1区及其以上区域是位于视觉皮层中,而retina是视网膜,其中包含了一些常见的神经细胞如视锥细胞(cone),视杠细胞(rod)和神经节细胞(ganglion). 2.视网膜中的信息处理视网膜位于眼睛的内表面">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CNN,einops">
-<meta property="og:url" content="https://baolongsun.github.io/2023/08/05/CNN,einops/index.html">
+<meta property="og:title" content="视网膜中的视觉处理">
+<meta property="og:url" content="https://baolongsun.github.io/2023/08/06/%E8%A7%86%E7%BD%91%E8%86%9C%E4%B8%AD%E7%9A%84%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/index.html">
 <meta property="og:site_name" content="Baolong">
-<meta property="og:description" content="1. torch1.1 二维卷积1234567import torchimport torch.nn as nnq &#x3D; nn.Conv2d(3,1,(4,4))#in_channel,out_channel,kernel_sizeprint(list(q.named_parameters())[0][1].shape)#卷积核的维度(1,3,4,4)print(list(q.named_param">
+<meta property="og:description" content="1.视觉信息流我主要研究的方向是类脑视觉,下图左半部分是我们人类的视觉处理过程中的从视网膜(retina)到脑区的信息流图,右半部分是我们具体的人脑的图形界面.  值得注意的是上图中左半部分V1区及其以上区域是位于视觉皮层中,而retina是视网膜,其中包含了一些常见的神经细胞如视锥细胞(cone),视杠细胞(rod)和神经节细胞(ganglion). 2.视网膜中的信息处理视网膜位于眼睛的内表面">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-08-05T12:22:00.000Z">
-<meta property="article:modified_time" content="2023-08-05T12:55:25.038Z">
+<meta property="og:image" content="c:\Users\21279\AppData\Roaming\Typora\typora-user-images\image-20230806115717205.png">
+<meta property="og:image" content="c:\Users\21279\AppData\Roaming\Typora\typora-user-images\image-20230806121530249.png">
+<meta property="og:image" content="c:\Users\21279\AppData\Roaming\Typora\typora-user-images\image-20230806121552548.png">
+<meta property="article:published_time" content="2023-08-06T03:52:41.000Z">
+<meta property="article:modified_time" content="2023-08-06T04:24:46.554Z">
 <meta property="article:author" content="Baolong Sun">
-<meta property="article:tag" content="python">
+<meta property="article:tag" content="视觉统计学习">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="c:\Users\21279\AppData\Roaming\Typora\typora-user-images\image-20230806115717205.png">
   
   
   
-  <title>CNN,einops - Baolong</title>
+  <title>视网膜中的视觉处理 - Baolong</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +201,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="CNN,einops"></span>
+            <span id="subtitle" data-typed-text="视网膜中的视觉处理"></span>
           
         </div>
 
@@ -208,8 +212,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-08-05 20:22" pubdate>
-          2023年8月5日 晚上
+        <time datetime="2023-08-06 11:52" pubdate>
+          2023年8月6日 中午
         </time>
       </span>
     
@@ -220,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          689 字
+          567 字
         
       </span>
     
@@ -231,7 +235,7 @@
         
         
         
-          6 分钟
+          5 分钟
         
       </span>
     
@@ -268,16 +272,20 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">CNN,einops</h1>
+            <h1 id="seo-header">视网膜中的视觉处理</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="1-torch"><a href="#1-torch" class="headerlink" title="1. torch"></a>1. torch</h2><h4 id="1-1-二维卷积"><a href="#1-1-二维卷积" class="headerlink" title="1.1 二维卷积"></a>1.1 二维卷积</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> torch<br><span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn<br>q = nn.Conv2d(<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,(<span class="hljs-number">4</span>,<span class="hljs-number">4</span>))<span class="hljs-comment">#in_channel,out_channel,kernel_size</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>(q.named_parameters())[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>].shape)<span class="hljs-comment">#卷积核的维度(1,3,4,4)</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>(q.named_parameters())[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>].shape)<span class="hljs-comment">#偏置项的维度(1)</span><br>data  = torch.randn(<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">64</span>,<span class="hljs-number">64</span>)<span class="hljs-comment">#batch,channel,height,weight</span><br><span class="hljs-built_in">print</span>(q(a).shape)<span class="hljs-comment">#(1,1,61,61)</span><br></code></pre></td></tr></table></figure>
-
-
-
-<h2 id="2-einops"><a href="#2-einops" class="headerlink" title="2.einops"></a>2.einops</h2><h4 id="2-1rearrange"><a href="#2-1rearrange" class="headerlink" title="2.1rearrange"></a>2.1rearrange</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> torch<br><span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn<br><span class="hljs-keyword">from</span> einops <span class="hljs-keyword">import</span> rearrange, repeat,reduce<br>img = torch.randn(<span class="hljs-number">300</span>,<span class="hljs-number">300</span>,<span class="hljs-number">3</span>)<br>img2 = rearrange(img,<span class="hljs-string">&quot;c h w -&gt; 1 c h w&quot;</span>)<span class="hljs-comment">#(1,300,300,3)</span><br>img3 = rearrange(img2,<span class="hljs-string">&quot;b c (h h1) (w w1) -&gt; b (h w) (h1 w1 c)&quot;</span>,h1=<span class="hljs-number">100</span>,w1=<span class="hljs-number">100</span>)<span class="hljs-comment">#生成3*3的flatten列向量(1,9,30000)</span><br>img4 = rearrange(img2,<span class="hljs-string">&quot;b c (h h1) (w wq) -&gt; b (h w) h1 w1 c&quot;</span>,h1=<span class="hljs-number">100</span>,w1=<span class="hljs-number">100</span>)<span class="hljs-comment">#生成3*3的裁剪图(1,9,100,100,3)</span><br></code></pre></td></tr></table></figure>
+                <h2 id="1-视觉信息流"><a href="#1-视觉信息流" class="headerlink" title="1.视觉信息流"></a>1.视觉信息流</h2><p>我主要研究的方向是类脑视觉,下图左半部分是我们人类的视觉处理过程中的从视网膜(retina)到脑区的信息流图,右半部分是我们具体的人脑的图形界面.</p>
+<p><img src="C:\Users\21279\AppData\Roaming\Typora\typora-user-images\image-20230806115717205.png" srcset="/img/loading.gif" lazyload alt="视觉信息流图"></p>
+<p>值得注意的是上图中左半部分V1区及其以上区域是位于视觉皮层中,而retina是视网膜,其中包含了一些常见的神经细胞如视锥细胞(cone),视杠细胞(rod)和神经节细胞(ganglion).</p>
+<h2 id="2-视网膜中的信息处理"><a href="#2-视网膜中的信息处理" class="headerlink" title="2.视网膜中的信息处理"></a>2.视网膜中的信息处理</h2><p>视网膜位于眼睛的内表面，包含只对电磁波谱的某个区间敏感的光感受器，以及将视觉信息转化为神经信号的细胞.</p>
+<p><img src="C:\Users\21279\AppData\Roaming\Typora\typora-user-images\image-20230806121530249.png" srcset="/img/loading.gif" lazyload alt="人类视网膜细节图"></p>
+<h4 id="2-1-视锥细胞和视杠细胞"><a href="#2-1-视锥细胞和视杠细胞" class="headerlink" title="2.1 视锥细胞和视杠细胞"></a>2.1 视锥细胞和视杠细胞</h4><p>视杠细胞对低亮度有较高的敏感性,而视锥细胞需要高水平的亮度.对于视锥细胞,我们可以根据它们的波长吸收率将视锥分类为S(短波长&#x3D;蓝色),M(中波长&#x3D;绿色)和L(长波长&#x3D;红色)视锥.</p>
+<p><img src="C:\Users\21279\AppData\Roaming\Typora\typora-user-images\image-20230806121552548.png" srcset="/img/loading.gif" lazyload alt="光感受器细胞图"></p>
+<p>视杆细胞和视锥细胞的分辨率（每平方毫米的受体数量）随着距中央凹的距离而急剧减少,大多数视锥细胞集中在中央凹内和中央凹周围,而视杆细胞以高偏心率构成光感受器的主体.</p>
+<p>因为只有视网膜的一小部分具有高空间分辨率(中央凹),所以需要注视控制来引导眼睛,使得感兴趣的场景特征投影到中央凹上.灵长类动物具有广泛的系统来主动控制眼球运动(涉及额叶中的FEF,顶叶中的LIP和中脑中的上级丘).而在计算机视觉方面(如CNN)对这方面的讨论并没有.</p>
 
                 
               </div>
@@ -290,7 +298,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/python/" class="print-no-link">#python</a>
+        <a href="/tags/%E8%A7%86%E8%A7%89%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/" class="print-no-link">#视觉统计学习</a>
       
     </div>
   
@@ -302,8 +310,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>CNN,einops</div>
-      <div>https://baolongsun.github.io/2023/08/05/CNN,einops/</div>
+      <div>视网膜中的视觉处理</div>
+      <div>https://baolongsun.github.io/2023/08/06/视网膜中的视觉处理/</div>
     </div>
     <div class="license-meta">
       
@@ -315,7 +323,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年8月5日</div>
+          <div>2023年8月6日</div>
         </div>
       
       
@@ -347,18 +355,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/08/06/%E8%A7%86%E7%BD%91%E8%86%9C%E4%B8%AD%E7%9A%84%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/" title="视网膜中的视觉处理">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">视网膜中的视觉处理</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/08/04/%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C/" title="数组操作">
-                        <span class="hidden-mobile">数组操作</span>
+                      <a href="/2023/08/05/CNN,einops/" title="CNN,einops">
+                        <span class="hidden-mobile">CNN,einops</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
