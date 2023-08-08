@@ -16,27 +16,22 @@
   <meta name="author" content="Baolong Sun">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1.视觉信息流我主要研究的方向是类脑视觉,下图左半部分是我们人类的视觉处理过程中的从视网膜(retina)到脑区的信息流图,右半部分是我们具体的人脑的图形界面.  值得注意的是上图中左半部分V1区及其以上区域是位于视觉皮层中,而retina是视网膜,其中包含了一些常见的神经细胞如视锥细胞(cone),视杠细胞(rod)和神经节细胞(ganglion).外侧膝状体(LGN)是连接视网膜和视觉皮层的重">
+    <meta name="description" content="1.总体与样本1.1 总体与个体在一个统计问题中, 我们把研究对象的全体称为总体, 构成总体的每个成员称为 个体.可以将总体理解为一堆数也可以理解为一个分布.对于一个总体分布$X$,往往由于总体过于庞大,我们需要进行对总体的抽样,对抽样后的个体进行分析,用来反映总体的某些特性. 1.2 样本为了了解总体的分布, 我们从总体中随机地抽取 n 个个体, 记其指标值为$x_1,x_2,…,x_n$,则$">
 <meta property="og:type" content="article">
-<meta property="og:title" content="视网膜中的视觉处理">
-<meta property="og:url" content="https://baolongsun.github.io/2023/08/06/%E8%A7%86%E7%BD%91%E8%86%9C%E4%B8%AD%E7%9A%84%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/index.html">
+<meta property="og:title" content="总体与样本">
+<meta property="og:url" content="https://baolongsun.github.io/2023/08/08/%E6%80%BB%E4%BD%93%E4%B8%8E%E6%A0%B7%E6%9C%AC/index.html">
 <meta property="og:site_name" content="Baolong">
-<meta property="og:description" content="1.视觉信息流我主要研究的方向是类脑视觉,下图左半部分是我们人类的视觉处理过程中的从视网膜(retina)到脑区的信息流图,右半部分是我们具体的人脑的图形界面.  值得注意的是上图中左半部分V1区及其以上区域是位于视觉皮层中,而retina是视网膜,其中包含了一些常见的神经细胞如视锥细胞(cone),视杠细胞(rod)和神经节细胞(ganglion).外侧膝状体(LGN)是连接视网膜和视觉皮层的重">
+<meta property="og:description" content="1.总体与样本1.1 总体与个体在一个统计问题中, 我们把研究对象的全体称为总体, 构成总体的每个成员称为 个体.可以将总体理解为一堆数也可以理解为一个分布.对于一个总体分布$X$,往往由于总体过于庞大,我们需要进行对总体的抽样,对抽样后的个体进行分析,用来反映总体的某些特性. 1.2 样本为了了解总体的分布, 我们从总体中随机地抽取 n 个个体, 记其指标值为$x_1,x_2,…,x_n$,则$">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://baolongsun.github.io/page_image/image-20230806115717205.png">
-<meta property="og:image" content="https://baolongsun.github.io/page_image/image-20230806121530249.png">
-<meta property="og:image" content="https://baolongsun.github.io/page_image/image-20230806121552548.png">
-<meta property="og:image" content="https://baolongsun.github.io/page_image/image-20230806144807121.png">
-<meta property="article:published_time" content="2023-08-06T03:52:41.000Z">
-<meta property="article:modified_time" content="2023-08-06T06:50:09.107Z">
+<meta property="article:published_time" content="2023-08-08T03:15:27.000Z">
+<meta property="article:modified_time" content="2023-08-08T07:10:36.939Z">
 <meta property="article:author" content="Baolong Sun">
-<meta property="article:tag" content="视觉统计学习">
+<meta property="article:tag" content="概率论与数理统计">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://baolongsun.github.io/page_image/image-20230806115717205.png">
   
   
   
-  <title>视网膜中的视觉处理 - Baolong</title>
+  <title>总体与样本 - Baolong</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -202,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="视网膜中的视觉处理"></span>
+            <span id="subtitle" data-typed-text="总体与样本"></span>
           
         </div>
 
@@ -213,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-08-06 11:52" pubdate>
-          2023年8月6日 中午
+        <time datetime="2023-08-08 11:15" pubdate>
+          2023年8月8日 上午
         </time>
       </span>
     
@@ -225,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          594 字
+          2.2k 字
         
       </span>
     
@@ -236,7 +231,7 @@
         
         
         
-          5 分钟
+          19 分钟
         
       </span>
     
@@ -273,21 +268,26 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">视网膜中的视觉处理</h1>
+            <h1 id="seo-header">总体与样本</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="1-视觉信息流"><a href="#1-视觉信息流" class="headerlink" title="1.视觉信息流"></a>1.视觉信息流</h2><p>我主要研究的方向是类脑视觉,下图左半部分是我们人类的视觉处理过程中的从视网膜(retina)到脑区的信息流图,右半部分是我们具体的人脑的图形界面.</p>
-<p><img src="/../page_image/image-20230806115717205.png" srcset="/img/loading.gif" lazyload alt="视觉信息流图"></p>
-<p>值得注意的是上图中左半部分V1区及其以上区域是位于视觉皮层中,而retina是视网膜,其中包含了一些常见的神经细胞如视锥细胞(cone),视杠细胞(rod)和神经节细胞(ganglion).外侧膝状体(LGN)是连接视网膜和视觉皮层的重要通路.</p>
-<h2 id="2-视网膜中的信息处理"><a href="#2-视网膜中的信息处理" class="headerlink" title="2.视网膜中的信息处理"></a>2.视网膜中的信息处理</h2><p>视网膜位于眼睛的内表面，包含只对电磁波谱的某个区间敏感的光感受器，以及将视觉信息转化为神经信号的细胞.</p>
-<p><img src="/../page_image/image-20230806121530249.png" srcset="/img/loading.gif" lazyload alt="视网膜结构图"></p>
-<h4 id="2-1-视锥细胞和视杠细胞"><a href="#2-1-视锥细胞和视杠细胞" class="headerlink" title="2.1 视锥细胞和视杠细胞"></a>2.1 视锥细胞和视杠细胞</h4><p>视杠细胞对低亮度有较高的敏感性,而视锥细胞需要高水平的亮度.对于视锥细胞,我们可以根据它们的波长吸收率将视锥分类为S(短波长&#x3D;蓝色),M(中波长&#x3D;绿色)和L(长波长&#x3D;红色)视锥.</p>
-<p><img src="/../page_image/image-20230806121552548.png" srcset="/img/loading.gif" lazyload alt="光感受器细胞图"></p>
-<p>视杆细胞和视锥细胞的分辨率（每平方毫米的受体数量）随着距中央凹的距离而急剧减少,大多数视锥细胞集中在中央凹内和中央凹周围,而视杆细胞以高偏心率构成光感受器的主体.</p>
-<p><img src="/../page_image/image-20230806144807121.png" srcset="/img/loading.gif" lazyload alt="光感受器细胞分布图"></p>
-<p>因为只有视网膜的一小部分具有高空间分辨率(中央凹),所以需要注视控制来引导眼睛,使得感兴趣的场景特征投影到中央凹上.灵长类动物具有广泛的系统来主动控制眼球运动(涉及额叶中的FEF,顶叶中的LIP和中脑中的上级丘).而在计算机视觉方面(如CNN)对这方面的讨论并没有.</p>
+                <h2 id="1-总体与样本"><a href="#1-总体与样本" class="headerlink" title="1.总体与样本"></a>1.总体与样本</h2><h4 id="1-1-总体与个体"><a href="#1-1-总体与个体" class="headerlink" title="1.1 总体与个体"></a>1.1 总体与个体</h4><p>在一个统计问题中, 我们把研究对象的全体称为<strong>总体</strong>, 构成总体的每个成员称为 <strong>个体</strong>.可以将总体理解为一堆数也可以理解为一个分布.对于一个总体分布$X$,往往由于总体过于庞大,我们需要进行对总体的抽样,对抽样后的个体进行分析,用来反映总体的某些特性.</p>
+<h4 id="1-2-样本"><a href="#1-2-样本" class="headerlink" title="1.2 样本"></a>1.2 样本</h4><p>为了了解总体的分布, 我们从总体中随机地抽取 n 个个体, 记其指标值为$x_1,x_2,…,x_n$,则$x_1,x_2,…,x_n$称为总体的一个 <strong>样本</strong>, n 称为<strong>样本容量</strong>, 或简称为<strong>样本量</strong>, 样本中的个体称为<strong>样品</strong>.</p>
+<p>需要指出, 样本具有二重性: 一方面, 由于样本是从总体中随机抽取的, 抽取前无法预知它们的数值, 因此, 样本是随机变量, 用大写字母$X_1,X_2,…,X_n$ 表示; 另一方面, 样本在抽取以后经观测就有确定的观测值, 因此, 样本又是一组数值. 此时用小写字母$x_1,x_2,…,x_n$表示是恰当的.</p>
+<h4 id="1-3-样本性质"><a href="#1-3-样本性质" class="headerlink" title="1.3 样本性质"></a>1.3 样本性质</h4><p>样本具有<strong>随机性</strong>, 即要求总体中每一个个体都有同等机会会被选入样本, 这便意味着每一样品$x_i$与总体 $X$ 有相同的分布.</p>
+<p>样本要有<strong>独立性</strong>, 即要求样本中每一样品的取值不影响其他样品的取值, 这意味着$x_1,x_2,…x_n$相互独立.</p>
+<p>总之可以理解为随机变量$X_1,X_2,…,X_n$是独立同分布.</p>
+<h2 id="2-样本性质"><a href="#2-样本性质" class="headerlink" title="2.样本性质"></a>2.样本性质</h2><h4 id="2-1-样本统计量"><a href="#2-1-样本统计量" class="headerlink" title="2.1 样本统计量"></a>2.1 样本统计量</h4><p>设$x_1,x_2,…x_n$为取自某总体的样本, 若样本函数$T(x_1,x_2,…x_n)$中不含有任何未知参数, 则称 T 为统计量. 统计量的分布称为抽样分布.</p>
+<p>从样本的二重性分析可知,可以将T理解为一个分布或者是一个具体的数值.</p>
+<h4 id="2-2-基本统计量"><a href="#2-2-基本统计量" class="headerlink" title="2.2 基本统计量"></a>2.2 基本统计量</h4><p>考虑总体分布为$X$,假设总体的均值为$\mu$,方差为$\sigma$.从中抽取了样本$X_1,X_2,…,X_n$,记$\bar{X}&#x3D;\frac{1}{n}\sum_{i&#x3D;1}^{n} {X_i}$</p>
+<h5 id="2-2-1-X-i-的性质"><a href="#2-2-1-X-i-的性质" class="headerlink" title="2.2.1 $X_i$的性质"></a>2.2.1 $X_i$的性质</h5><p>由于抽样的独立同分布的特性,对于$X_i,i&#x3D;1,2,…,n$,其均值为$\mu$,方差为$\sigma$.</p>
+<h5 id="2-2-2-样本均值-bar-X-的性质"><a href="#2-2-2-样本均值-bar-X-的性质" class="headerlink" title="2.2.2 样本均值$\bar{X}$的性质"></a>2.2.2 样本均值$\bar{X}$的性质</h5><p>$$<br>\begin{align*}<br>E(\bar{X})&amp; &#x3D; E(\frac{1}{n}\sum_{i&#x3D;1}^{n} {X_i})<br> &#x3D; \frac{1}{n}\sum_{i&#x3D;1}^{n} E(X_i)<br> &#x3D; \frac{1}{n}\sum_{i&#x3D;1}^{n} \mu &#x3D; \mu<br>\end{align*}<br>$$</p>
+<p>$$<br>\begin{align*}<br>D(\bar{x}) &amp;&#x3D;D(\frac{1}{n}\sum_{i&#x3D;1}^{1} X_i)<br>&#x3D;\frac{1}{n^2}\sum_{i&#x3D;1}^{n}D(X_i)<br>&#x3D;\frac{1}{n^2}\sum_{i&#x3D;1}^{n} \sigma^2 &#x3D; \frac{\sigma^2}{n}<br>\end{align*}<br>$$</p>
+<p>因此,我们有理由说,若总体分布为$N(\mu,\sigma^2)$,则$\bar{X}$分布为$N(\mu,\frac{\sigma^2}{n})$.</p>
+<h5 id="2-2-3-样本方差-S-2-的性质"><a href="#2-2-3-样本方差-S-2-的性质" class="headerlink" title="2.2.3 样本方差$S^2$的性质"></a>2.2.3 样本方差$S^2$的性质</h5><p>$S^2$的定义为.<br>$$<br>S^2 &#x3D; \frac{1}{n-1}\sum_{i&#x3D;1}^n(X_i-\bar{X})^2&#x3D;\frac{1}{n-1}(\sum_{i&#x3D;1}^n X_i^2 - n\bar{X}^2)<br>$$<br>为什么除n-1而不像总体方差那样除n呢?这是一个很有意思的问题,我们需要引入<strong>无偏估计</strong>的概念,我们希望构造的样本统计量的期望等于总体的值,我们构造了方差统计量,其最好能满足对应的期望值为总体的方差.下面给出证明.<br>$$<br>\begin{align*}<br>E(S^2)&amp;&#x3D;\frac{1}{n-1}(\sum_{i&#x3D;1}^nE(X_i^2)-nE(\bar{X}^2))<br>\end{align*}<br>$$<br>由$E(X^2) &#x3D; D(X)+(E(X))^2$可以得到.<br>$$<br>\begin{align*}<br>E(X_i^2) &amp;&#x3D; D(X_i)+(E(X_i))^2&#x3D;\sigma^2+\mu^2\<br>E(\bar{X}^2)&amp;&#x3D;D(\bar{X})+(E(\bar{X}))^2&#x3D;\frac{\sigma^2}{n}+\mu^2<br>\end{align*}<br>$$<br>代入公式$E(S^2)$可得.<br>$$<br>E(S^2)&#x3D;\frac{1}{n-1}(n\sigma^2+n\mu^2-\sigma^2-n\mu^2)&#x3D;\sigma^2<br>$$</p>
+<h5 id="2-2-4-其余统计量"><a href="#2-2-4-其余统计量" class="headerlink" title="2.2.4 其余统计量"></a>2.2.4 其余统计量</h5><p>样本的标准差定义为.<br>$$<br>S &#x3D; \sqrt{\frac{1}{n-1}\sum_{i&#x3D;1}^n(X_i-\bar{X})^2}<br>$$<br>样本的k阶原点矩定义为.<br>$$<br>A_k &#x3D; \frac{1}{n}\sum_{i&#x3D;1}^nX_i^k,(k&#x3D;1,2,…)<br>$$<br>样本的k阶中心矩定义为.<br>$$<br>B_k &#x3D; \frac{1}{n}\sum_{i&#x3D;1}^n(X_i-\bar{X})^k,(k&#x3D;1,2,…)<br>$$</p>
 
                 
               </div>
@@ -300,7 +300,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E8%A7%86%E8%A7%89%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/" class="print-no-link">#视觉统计学习</a>
+        <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" class="print-no-link">#概率论与数理统计</a>
       
     </div>
   
@@ -312,8 +312,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>视网膜中的视觉处理</div>
-      <div>https://baolongsun.github.io/2023/08/06/视网膜中的视觉处理/</div>
+      <div>总体与样本</div>
+      <div>https://baolongsun.github.io/2023/08/08/总体与样本/</div>
     </div>
     <div class="license-meta">
       
@@ -325,7 +325,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年8月6日</div>
+          <div>2023年8月8日</div>
         </div>
       
       
@@ -357,18 +357,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/08/08/%E6%80%BB%E4%BD%93%E4%B8%8E%E6%A0%B7%E6%9C%AC/" title="总体与样本">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">总体与样本</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/08/05/CNN,einops/" title="CNN,einops">
-                        <span class="hidden-mobile">CNN,einops</span>
+                      <a href="/2023/08/06/%E8%A7%86%E7%BD%91%E8%86%9C%E4%B8%AD%E7%9A%84%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/" title="视网膜中的视觉处理">
+                        <span class="hidden-mobile">视网膜中的视觉处理</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -425,6 +419,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -618,6 +618,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
