@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>三大抽样分布</title>
+    <link href="/2023/08/09/%E4%B8%89%E5%A4%A7%E6%8A%BD%E6%A0%B7%E5%88%86%E5%B8%83/"/>
+    <url>/2023/08/09/%E4%B8%89%E5%A4%A7%E6%8A%BD%E6%A0%B7%E5%88%86%E5%B8%83/</url>
+    
+    <content type="html"><![CDATA[<h2 id="1-引言"><a href="#1-引言" class="headerlink" title="1. 引言"></a>1. 引言</h2><p>对于一个总体$X$,如果我们难以知道其所具有的性质,为此我们取出样本$X_1,X_2,…,X_n$,此时样本容量为$n$.对于这些样本构造的统计量可以用来度量总体的某些未知的信息,这时便是点估计和区间估计等等.另外一方面如果这$n$个样本构造的统计量服从某种分布,那么我们可以进行假设检验的推断.下面将详细的介绍一些统计量服从的分布.</p><h2 id="2-chi-2-分布"><a href="#2-chi-2-分布" class="headerlink" title="2. $\chi^2$分布"></a>2. $\chi^2$分布</h2><p>若总体服从标准正态分布,我们取样$X_1,X_2,…,X_n$,根据取样的性质,这n个随机变量独立同分布于标准正态分布.对于统计量$\chi^2 &#x3D; X_1^2+X_2^2+…+X_n^2$ 其服从自由度为n的$\chi^2$分布,记作$\chi^2\sim\chi^2(n)$.</p><h4 id="2-1-概率密度函数"><a href="#2-1-概率密度函数" class="headerlink" title="2.1 概率密度函数"></a>2.1 概率密度函数</h4><p> 若$X\sim N(0,1)$, 则 $X^2\sim Ga(\frac{1}{2},\frac{1}{2})$,根据<strong>伽玛分布</strong>的可加性立有$\chi^2(n)\sim Ga(\frac{n}{2},\frac{n}{2})$.其密度函数为<br>$$<br>p(y)&#x3D;\frac{\frac{1}{2}^{\frac{n}{2}}}{\Gamma(\frac{n}{2})}y^{\frac{n}{2}-1}e^{-\frac{y}{2}}<br>$$</p><h4 id="2-2-分位数"><a href="#2-2-分位数" class="headerlink" title="2.2 分位数"></a>2.2 分位数</h4><p>对给定$0&lt;\alpha&lt;1$,称满足$P(\chi^2\leqslant\chi_{1-\alpha}^2(n))&#x3D;1-\alpha$是自由度为$n$的卡方分布的$1-\alpha$分位数. </p><h2 id="3-F分布"><a href="#3-F分布" class="headerlink" title="3. F分布"></a>3. F分布</h2><p>设$X_1\sim \chi^2(m),X_2\sim\chi^2(n)$,且$X_1$与$X_2$独立, 则称$F &#x3D; \frac{X_1&#x2F;m}{X_2&#x2F;n}$ 分布是服从自由度为$m$与$n$的$F$分布, 记为$F\sim F(m,n)$.</p><h4 id="3-1-分位数"><a href="#3-1-分位数" class="headerlink" title="3.1 分位数"></a>3.1 分位数</h4><p>当随机变量$F\sim F(m,n)$时, 对给定$0&lt;\alpha&lt;1$, 称满足$P(F\leqslant F_{1-\alpha}(m,n))&#x3D;1-\alpha$的$F_{1-\alpha}(m,n)$是自由度为$m$与$n$的$F$分布的$1-\alpha$分位数.</p><h2 id="4-t分布"><a href="#4-t分布" class="headerlink" title="4. t分布"></a>4. t分布</h2><p>设随机变量$X_1$与$X_2$独立且服从分布$X_1\sim N(0,1),X_2\sim\chi^2(n)$, 则称$t&#x3D;\frac{X_1}{X_2&#x2F;n}$的分布为自由度为$n$的$t$ 分布, 记为$t\sim t(n)$.</p><h4 id="4-1-分位数"><a href="#4-1-分位数" class="headerlink" title="4.1 分位数"></a>4.1 分位数</h4><p>当随机变量$t\sim t(n)$, 称满足$P(t\leqslant t_{1-\alpha}(n))&#x3D;1-\alpha$的$t_{1-\alpha}(n)$是自由度为$n$的$t$分布的$1-\alpha$分位数. </p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>概率论与数理统计</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>总体与样本</title>
     <link href="/2023/08/08/%E6%80%BB%E4%BD%93%E4%B8%8E%E6%A0%B7%E6%9C%AC/"/>
     <url>/2023/08/08/%E6%80%BB%E4%BD%93%E4%B8%8E%E6%A0%B7%E6%9C%AC/</url>
